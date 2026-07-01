@@ -1,0 +1,16 @@
+# 模型文件
+*.pkl
+*.joblib
+
+# 数据文件
+*.csv
+*.xlsx
+*.json
+
+# 环境变量
+.env
+
+# Python
+__pycache__/
+*.pyc
+.DS_Store
