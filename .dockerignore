@@ -1,0 +1,16 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__/
+*.pyc
+
+# 知识库（Docker 启动时会自动构建）
+knowledge_base.pkl
+
+# 旧版文件（Docker 不需要）
+api_server.py
+
+# 环境变量
+.env

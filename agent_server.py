@@ -30,8 +30,14 @@ if sys.platform == "win32":
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
 # ---------- 引入 ML 模型 ----------
-sys.path.insert(0, r"E:\小论文\Dataset construction")
-from predict import predict
+# 尝试加载真实模型，失败则使用 mock（Docker 环境）
+try:
+    sys.path.insert(0, r"E:\小论文\Dataset construction")
+    from predict import predict
+    _PREDICT_MODE = "真实模型"
+except (ImportError, FileNotFoundError):
+    from predict_mock import predict
+    _PREDICT_MODE = "Mock演示模式"
 from openai import OpenAI
 import httpx
 import numpy as np
